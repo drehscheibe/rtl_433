@@ -45,8 +45,9 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
 		= Tuner options =
   [-d <RTL-SDR USB device index> | :<RTL-SDR USB device serial> | <SoapySDR device query> | rtl_tcp | help]
   [-g <gain> | help] (default: auto)
-  [-t <settings>] apply a list of keyword=value settings for SoapySDR devices
-       e.g. -t "antenna=A,bandwidth=4.5M,rfnotch_ctrl=false"
+  [-t <settings>] apply a list of keyword=value settings to the SDR device
+       e.g. for SoapySDR -t "antenna=A,bandwidth=4.5M,rfnotch_ctrl=false"
+       for RTL-SDR use "direct_samp[=1]", "offset_tune[=1]", "digital_agc[=1]", "biastee[=1]"
   [-f <frequency>] Receive frequency(s) (default: 433920000 Hz)
   [-H <seconds>] Hop interval for polling of multiple frequencies (default: 600 seconds)
   [-p <ppm_error>] Correct rtl-sdr tuner frequency offset error (default: 0)
@@ -250,7 +251,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [165]  TFA Dostmann 30.3221.02 T/H Outdoor Sensor
     [166]  LaCrosse Technology View LTV-WSDTH01 Breeze Pro Wind Sensor
     [167]  Somfy RTS
-    [168]  Schrader TPMS SMD3MA4 (Subaru)
+    [168]  Schrader TPMS SMD3MA4 (Subaru) 3039 (Infiniti, Nissan, Renault)
     [169]* Nice Flor-s remote control for gates
     [170]  LaCrosse Technology View LTV-WR1 Multi Sensor
     [171]  LaCrosse Technology View LTV-TH Thermo/Hygro Sensor
@@ -320,6 +321,8 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [235]  Oil Ultrasonic SMART FSK
     [236]  Gasmate BA1008 meat thermometer
     [237]  Flowis flow meters
+    [238]  Wireless M-Bus, Mode T, 32.768kbps (-f 868.3M -s 1000k)
+    [239]  Revolt NC-5642 Energy Meter
 
 * Disabled by default, use -R n or a conf file to enable
 
